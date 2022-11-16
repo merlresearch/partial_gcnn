@@ -1,0 +1,74 @@
+# Copyright (C) 2022 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# @package _global_
+net:
+  type: ""
+  no_hidden: -1
+  no_blocks: -1
+  dropout: 0.0
+  norm: ""
+  bottleneck_factor_skip_connection: 2
+  block_width_factors: [0.0, ]
+  pool_blocks: [-1, ]
+  dropout_blocks: [-1, ]
+  last_conv_T2: False
+  learnable_final_pooling: False
+  final_spatial_dim: [1,1]
+conv:
+  padding: ""
+  partial_equiv: False
+  bias: True
+kernel:
+  type: ""
+  no_hidden: -1
+  no_layers: -1
+  size: -1
+  omega0: 0.0
+  learn_omega0: False
+  weight_norm: False
+  norm: ""
+  activation: ""
+base_group:
+  name: ""
+  no_samples: 0
+  sample_per_batch_element: False
+  sample_per_layer: False
+  sampling_method: "deterministic"
+  gumbel_init_temp: 0.5
+  gumbel_end_temp: 1e-4
+train:
+  do: True
+  batch_size: -1
+  epochs: -1
+  lr: 0.0
+  lr_probs: 0.0
+  lr_omega0: 0.0
+  gradient_clip: 0.0
+  weight_decay: 0.0
+  optimizer: Adam
+  optimizer_params:
+    nesterov:
+    momentum:
+  scheduler:
+  scheduler_params:
+    decay_steps: -1
+    decay_factor: -1
+    patience: -1
+    warmup_epochs: -1
+  warm_decay: 0.0
+  monotonic_decay_loss: 0.0
+dataset: ""
+dataset_params:
+  rot_interval: 0
+augment: None
+wandb:
+  project: partial_equiv
+device: cuda
+debug: False
+pretrained: False
+seed: 0
+cuda_visible_devices: [-1, ]
+comment: ""
+no_workers: 4
